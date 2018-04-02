@@ -76,3 +76,27 @@ Hydra is already optimised for adding, updating and removing pages, staff, advic
 
 * Exposed as a data file to give clients better access.
 * Set in the *Data* / *Footer* section.
+
+# Running locally:
+
+Running for the first time:
+
+```
+docker run --name blog -it -v ${PWD}:/opt -p 4000:4000 ruby:2.4.1 bash
+
+cd /opt
+bundle install
+
+jekyll serve -H 0.0.0.0
+```
+
+Running it subsequently without having to re-run all of the `gem install` steps:
+
+```
+docker start blog
+docker exec -it blog bash
+
+cd /opt
+
+jekyll serve -H 0.0.0.0
+```
