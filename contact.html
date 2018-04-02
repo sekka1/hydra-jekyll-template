@@ -6,15 +6,16 @@ description: We'd love to help you improve your infrastructure.
 map:
   latitude: 37.773972
   longitude: -122.431297
-  address: "San Francisco, ca"
+  #address: "San Francisco, ca"
   zoom: 13
 ---
 <div class="map" id="map"></div>
 
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="support@example.com" />
+	<!--<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">-->
+  <form action="https://formspree.io/garlandk@gmail.com" method="post" class="contact-form">
+		<input type="hidden" name="_to" value="support@devops.bot" />
 		<input type="text" name="_gotcha" style="display: none;">
 
 		<label for="name">Full Name</label>
@@ -30,11 +31,11 @@ map:
 	</form>
 
 	<div class="contact-details">
-		<h3 class="editable">Address</h3>
+		<!--<h3 class="editable">Address</h3>
 		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
-
+  -->
 		<h3 class="editable">Email</h3>
-		<p><a href="mailto:support@example.com">support@example.com</a></p>
+		<p><a href="mailto:garlandk@gmail.com">garlandk@gmail.com</a></p>
 	</div>
 </div>
 
