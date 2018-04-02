@@ -100,3 +100,11 @@ cd /opt
 
 jekyll serve -H 0.0.0.0
 ```
+
+## Editing template notes:
+
+### Top navigation
+This is in `_data/navigation.yml` file
+
+### Footer
+This is in the `_data/footer.yml` file.
