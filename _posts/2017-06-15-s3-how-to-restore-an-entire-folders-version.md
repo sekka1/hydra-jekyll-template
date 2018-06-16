@@ -48,7 +48,7 @@ s3-pit-restore -b my-bucket -d my-restored-bucket -t "06-17-2016 23:59:50 +2"
 You can also just downlowd a sub folder of a bucket:
 
 ```
-s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t "06-17-2016 23:59:50 +2"```
+s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t "06-17-2016 23:59:50 +2"
 ```
 
 Same command as above with one additional flag:
