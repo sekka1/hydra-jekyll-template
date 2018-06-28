@@ -16,8 +16,11 @@ For example, a user said I can't port forward to a port and pasted me the error:
 error: error upgrading connection: pods "selenium-node-firefox-debug-mtw7r" is forbidden: User "john" cannot create pods/portforward in the namespace "app1"
 ```
 
-This basically told me all that I need.  It clearly states the user cannot perform
-the action `pods/portforward`.
+This basically told me all that I need.  It states the user cannot perform
+the action `create` on the resource `pods/portforward`.  
+
+I do think the "action" (create) and the "resource" (pods/portforward) should be
+highlighted somehow in the error message to make it even clearer.
 
 So I added this to his role:
 
@@ -31,7 +34,7 @@ metadata:
 rules:
 - apiGroups: [""]
   resources: ["pods", "pods/log", pods/portforward]
-  verbs: ["get", "list"]
+  verbs: ["get", "list", "create"]
 ```
 
 This solved the problem.  I love it when the error tells me exactly what it is and
