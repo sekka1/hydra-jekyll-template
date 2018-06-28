@@ -40,3 +40,15 @@ of the time the systems that are using this script has a certain `aws-cli` versi
 I would want to test with that version of the `aws-cli` locally to make sure everything
 works out.  Instead of installing various versions locally, I just run my tests with the
 correct versioned container.
+
+Another use for this container is to upload items to S3 from a server.  The server
+would usually not have `aws-cli` installed but it does have Docker.  With this
+command you can upload anything to your S3 buckets:
+```
+docker run \
+--env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
+--env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
+-v $PWD:/data \
+garland/aws-cli:1.15.47 \
+aws s3 sync . s3://mybucket
+```
